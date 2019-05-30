@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+item1:
+  itemid: 1
+  itemname: C言語入門
+
+item2:
+  itemid: 2
+  itemname: Java入門
+
+item3:
+  itemid: 3
+  itemname: Python入門
+
+item4:
+  itemid: 4
+  itemname: Ruby入門
+
+
