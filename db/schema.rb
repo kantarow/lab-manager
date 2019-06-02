@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_30_161647) do
+ActiveRecord::Schema.define(version: 2019_06_01_205958) do
+
+  create_table "item_books", id: false, force: :cascade do |t|
+    t.integer "id"
+    t.integer "INTEGER PRIMARY KEY AUTO_INCREMENT"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "genre"
+  end
 
   create_table "items", force: :cascade do |t|
     t.integer "itemid"

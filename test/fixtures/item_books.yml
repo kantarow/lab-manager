@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+program:
+    id: 17
+    title: CIP法とJavaによるCG趣味レーション
+    genre: program
+
+network:
+    id: 19
+    title: 移動通信における電波伝搬
+    genre: network
+
+micom:
+    id: 78
+    title: インターフェース 2016 7 ラズパイではじめる　人工知能コンピュータ 
+    genre: micom
+
+hardware:
+    id: 1
+    title: 工学系の数学入門　短期集中　振動論と制御理論
+    genre: hardware
+
+software:
+    id: 5
+    title: わかりやすい　パターン認識
+    genre: software
+
+electronic:
+    id: 15
+    title: はじめての電気工学
+    genre: electronic
+
+generate:
+    id: 8
+    title: 新編　高専の化学
+    genre: generate
+
+other:
+    id: 13
+    title: 数学嫌いでも数学的思考力が飛躍的に身につく本
+    genre: other
