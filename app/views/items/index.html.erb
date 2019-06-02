@@ -5,219 +5,131 @@
 <h1>ジャンル別の備品一覧</h1>
 
 <!-------------------- ここから書籍ジャンル ---------------------------->
-<div id="div_books">
-<p><input type="button" value="書籍" style="WIDTH:300px"
-   onClick="document.getElementById('div_books_close').style.display='block';
-            document.getElementById('div_books').style.display='none'"></p>
-</div>
-<div id="div_books_close" style="display:none">
-<p><input type="button" value="非表示にする" style="WIDTH:300px"
-   onClick="document.getElementById('div_books_close').style.display='none';
-            document.getElementById('div_books').style.display='block'
-             document.location='#div_books'"></p>
+<%= render layout: 'each_genre', locals: {
+  genre:    "books",
+  ja_genre: "書籍",
+  width:    300 } do %>
 
-<!-- ここからプログラミングジャンル -->
-<div id="div_program">
-<input type="button" value="プログラミング" style="WIDTH:150px"
-   onClick="document.getElementById('div_program_close').style.display='block';
-            document.getElementById('div_program').style.display='none'"></p>
-</div>
+  <!-- ここからプログラミングジャンル -->
 
-<div id="div_program_close" style="display:none">
-<p><input type="button" value="非表示にする" style="WIDTH:150px"
-   onClick="document.getElementById('div_program_close').style.display='none';
-            document.getElementById('div_program').style.display='block'"></p>
+  <%= render partial: 'each_genre', locals: {
+    genre:    "programming",
+    ja_genre: "プログラミング",
+    width:    150 } %>
 
-<% @items.each do |item| %>
-<% if item.genre == "program" %>
-<%= item.id %>
-<%= item.title %>
+  <!-- ここまでプログラミングジャンル -->
+
+  <!-- 通信・ネットワーク -->
+
+  <%= render partial: 'each_genre', locals: {
+    genre:    "network",
+    ja_genre: "通信・ネットワーク",
+    width:    150 } %>
+
+  <!-- ここまで通信・ネットワークジャンル -->
+
+  <!-- マイコン -->
+
+  <%= render partial: 'each_genre', locals: {
+    genre:    "micom",
+    ja_genre: "マイコン",
+    width:    150 } %>
+
+  <!-- マイコン -->
+
+  <!-- ハードウェア -->
+
+  <%= render partial: 'each_genre', locals: {
+    genre:    "hard",
+    ja_genre: "ハードウェア",
+    width:    150 } %>
+
+  <!-- ハードウェア -->
+
+  <!-- ソフトウェア -->
+
+  <%= render partial: 'each_genre', locals: {
+    genre:    "soft",
+    ja_genre: "ソフトウェア",
+    width:    150 } %>
+
+  <!-- ソフトウェア -->
+
+  <!-- 電気・電子 -->
+
+  <%= render partial: 'each_genre', locals: {
+    genre:    "elec",
+    ja_genre: "電気電子",
+    width:    150 } %>
+
+  <!-- 電気・電子 -->
+
+  <!-- 一般科目 -->
+
+  <%= render partial: 'each_genre', locals: {
+    genre:    "general",
+    ja_genre: "一般科目",
+    width:    150 } %>
+
+  <!-- 一般科目 -->
+
+  <!-- その他 -->
+
+  <%= render partial: 'each_genre', locals: {
+    genre:    "booksother",
+    ja_genre: "その他",
+    width:    150 } %>
+
 <% end %>
-<% end %>
-</div>
-<!-- ここまでプログラミングジャンル -->
+  <!-- その他 -->
 
-<!-- 通信・ネットワーク -->
-<div id="div_network">
-<input type="button" value="通信・ネットワーク" style="WIDTH:150px"
-   onClick="document.getElementById('div_network_close').style.display='block';
-            document.getElementById('div_network').style.display='none'"></p>
-</div>
-
-<div id="div_network_close" style="display:none">
-<p><input type="button" value="非表示にする" style="WIDTH:150px"
-   onClick="document.getElementById('div_network_close').style.display='none';
-            document.getElementById('div_network').style.display='block'"></p>
-<% @items.each do |item| %>
-<% if item.genre == "network" %>
-<p><%= item.id %><%= item.title %></p>
-<% end %>
-<% end %>
-</div>
-<!-- ここまで通信・ネットワークジャンル -->
-
-<!-- マイコン -->
-<div id="div_micom">
-<input type="button" value="マイコン" style="WIDTH:150px"
-   onClick="document.getElementById('div_micom_close').style.display='block';
-            document.getElementById('div_micom').style.display='none'"></p>
-</div>
-
-<div id="div_micom_close" style="display:none">
-<p><input type="button" value="非表示にする" style="WIDTH:150px"
-   onClick="document.getElementById('div_micom_close').style.display='none';
-            document.getElementById('div_micom').style.display='block'"></p>
-<% @items.each do |item| %>
-<% if item.genre == "micom" %>
-<p><%= @item.id %><%= item.title %></p>
-<% end %>
-<% end %>
-</div>
-<!-- マイコン -->
-
-<!-- ハードウェア -->
-<div id="div_hard">
-<input type="button" value="ハードウェア" style="WIDTH:150px"
-   onClick="document.getElementById('div_hard_close').style.display='block';
-            document.getElementById('div_hard').style.display='none'"></p>
-</div>
-
-<div id="div_hard_close" style="display:none">
-<p><input type="button" value="非表示にする" style="WIDTH:150px"
-   onClick="document.getElementById('div_hard_close').style.display='none';
-            document.getElementById('div_hard').style.display='block'"></p>
-<% @items.each do |item| %>
-<% if item.genre == "hardware" %>
-<p><%= item.id %><%= item.title %></p>
-<% end %>
-<% end %>
-</div>
-<!-- ハードウェア -->
-
-<!-- ソフトウェア -->
-<div id="div_soft">
-<input type="button" value="ソフトウェア" style="WIDTH:150px"
-   onClick="document.getElementById('div_soft_close').style.display='block';
-            document.getElementById('div_soft').style.display='none'"></p>
-</div>
-
-<div id="div_soft_close" style="display:none">
-<p><input type="button" value="非表示にする" style="WIDTH:150px"
-   onClick="document.getElementById('div_soft_close').style.display='none';
-            document.getElementById('div_soft').style.display='block'"></p>
-<% @items.each do |item| %>
-<% if item.genre == "software" %>
-<p><%= item.id %><%= item.title %></p>
-<% end %>
-<% end %>
-</div>
-<!-- ソフトウェア -->
-
-<!-- 電気・電子 -->
-<div id="div_elec">
-<input type="button" value="電気電子" style="WIDTH:150px"
-   onClick="document.getElementById('div_elec_close').style.display='block';
-            document.getElementById('div_elec').style.display='none'"></p>
-</div>
-
-<div id="div_elec_close" style="display:none">
-<p><input type="button" value="非表示にする" style="WIDTH:150px"
-   onClick="document.getElementById('div_elec_close').style.display='none';
-            document.getElementById('div_elec').style.display='block'"></p>
-<% @items.each do |item| %>
-<% if item.genre == "electronic" %>
-<p><%= item.id %><%= item.title %></p>
-<% end %>
-<% end %>
-</div>
-<!-- 電気・電子 -->
-
-<!-- 一般科目 -->
-<div id="div_general">
-<input type="button" value="一般科目" style="WIDTH:150px"
-   onClick="document.getElementById('div_general_close').style.display='block';
-            document.getElementById('div_general').style.display='none'"></p>
-</div>
-
-<div id="div_general_close" style="display:none">
-<p><input type="button" value="非表示にする" style="WIDTH:150px"
-   onClick="document.getElementById('div_general_close').style.display='none';
-            document.getElementById('div_general').style.display='block'"></p>
-<% @items.each do |item| %>
-<% if item.genre == "generate" %>
-<p><%= item.id %><%= item.title %></p>
-<% end %>
-<% end %>
-</div>
-<!-- 一般科目 -->
-
-<!-- その他 -->
-<div id="div_booksother">
-<input type="button" value="その他" style="WIDTH:150px"
-   onClick="document.getElementById('div_booksother_close').style.display='block';
-            document.getElementById('div_booksother').style.display='none'"></p>
-</div>
-
-<div id="div_booksother_close" style="display:none">
-<p><input type="button" value="非表示にする" style="WIDTH:150px"
-   onClick="document.getElementById('div_booksother_close').style.display='none';
-            document.getElementById('div_booksother').style.display='block'"></p>
-<% @items.each do |item| %>
-<% if item.genre == "other" %>
-<p><%= item.id %><%= item.title %></p>
-<% end %>
-<% end %>
-</div>
-<!-- その他 -->
-
-</div>
 <!-------------------- ここまで書籍ジャンル ---------------------------->
 
 <!-------------------- ここから電子部品ジャンル--------------------------->
 <div id="div_1">
-<p><input type="button" value="電子部品" style="WIDTH:300px"
-   onClick="document.getElementById('div_2').style.display='block';
-            document.getElementById('div_1').style.display='none'"></p>
+  <p><input type="button" value="電子部品" style="WIDTH:300px"
+  onClick="document.getElementById('div_2').style.display='block';
+  document.getElementById('div_1').style.display='none'"></p>
 </div>
 <div id="div_2" style="display:none">
-<p><input type="button" value="非表示にする" style="WIDTH:300px"
-   onClick="document.getElementById('div_2').style.display='none';
-            document.getElementById('div_1').style.display='block'"></p>
-<p>
-ああああああああああああああああ
-</p>
+  <p><input type="button" value="非表示にする" style="WIDTH:300px"
+  onClick="document.getElementById('div_2').style.display='none';
+  document.getElementById('div_1').style.display='block'"></p>
+  <p>
+  ああああああああああああああああ
+  </p>
 </div>
 <!-------------------- ここまで電子部品ジャンル ---------------------------->
 
 <!-------------------- ここから機材ジャンル--------------------------->
 <div id="div_1">
-<p><input type="button" value="機材" style="WIDTH:300px"
-   onClick="document.getElementById('div_2').style.display='block';
-            document.getElementById('div_1').style.display='none'"></p>
+  <p><input type="button" value="機材" style="WIDTH:300px"
+                                         onClick="document.getElementById('div_2').style.display='block';
+                                         document.getElementById('div_1').style.display='none'"></p>
 </div>
 <div id="div_2" style="display:none">
-<p><input type="button" value="非表示にする" style="WIDTH:300px"
-   onClick="document.getElementById('div_2').style.display='none';
-            document.getElementById('div_1').style.display='block'"></p>
-<p>
-ああああああああああああああああ
-</p>
+  <p><input type="button" value="非表示にする" style="WIDTH:300px"
+                                                     onClick="document.getElementById('div_2').style.display='none';
+                                                     document.getElementById('div_1').style.display='block'"></p>
+  <p>
+  ああああああああああああああああ
+  </p>
 </div>
 <!-------------------- ここまで機材ジャンル ---------------------------->
 
 <!-------------------- ここからその他ジャンル--------------------------->
 <div id="div_1">
-<p><input type="button" value="その他" style="WIDTH:300px"
-   onClick="document.getElementById('div_2').style.display='block';
-            document.getElementById('div_1').style.display='none'"></p>
+  <p><input type="button" value="その他" style="WIDTH:300px"
+  onClick="document.getElementById('div_2').style.display='block';
+  document.getElementById('div_1').style.display='none'"></p>
 </div>
 <div id="div_2" style="display:none">
-<p><input type="button" value="非表示にする" style="WIDTH:300px"
-   onClick="document.getElementById('div_2').style.display='none';
-            document.getElementById('div_1').style.display='block'"></p>
-<p>
-ああああああああああああああああ
-</p>
+  <p><input type="button" value="非表示にする" style="WIDTH:300px"
+  onClick="document.getElementById('div_2').style.display='none';
+  document.getElementById('div_1').style.display='block'"></p>
+  <p>
+  ああああああああああああああああ
+  </p>
 </div>
 <!-------------------- ここまでその他ジャンル ---------------------------->
 

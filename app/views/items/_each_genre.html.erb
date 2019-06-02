@@ -1,0 +1,19 @@
+<div id="div_<%= genre %>">
+  <p><input type="button" value="<%= ja_genre %>" style="WIDTH:<%= width %>px"
+      onClick="document.getElementById('div_<%= genre %>_close').style.display='block';
+      document.getElementById('div_<%= genre %>').style.display='none'"></p>
+</div>
+
+<div id="<%= "div_#{genre}_close" %>" style="display:none">
+  <p><input type="button" value="非表示にする" style="WIDTH:<%= width %>px"
+      onClick="document.getElementById('div_<%= genre %>_close').style.display='none';
+      document.getElementById('div_<%= genre %>').style.display='block'"></p>
+
+    <%= yield %>
+
+    <% ItemBook.where(genre: genre)&.each do |item| %>
+      <%= item.id %>
+      <%= item.title %>
+
+  <% end %>
+</div>
